@@ -1,0 +1,19 @@
+name: Usando variaveis de ambiente
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  env:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Exexução 
+        run: |
+          echo "Valor XPTO"
