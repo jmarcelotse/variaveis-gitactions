@@ -24,15 +24,15 @@ jobs:
         run: |
           echo "$ENV_WORKFLOW"
           echo "$ENV_JOB"
-          echo "$EENV_ACTION"
+          echo "$ENV_ACTION"
 
       - name: Exexução 2
         env:
           ENV_ACTION: "Valor ACTION - SegundaExecução"
-          run: |
-            echo "$ENV_WORKFLOW"
-            echo "$ENV_JOB"
-            echo "$EENV_ACTION"
+        run: |
+          echo "$ENV_WORKFLOW"
+          echo "$ENV_JOB"
+          echo "$ENV_ACTION"
 
   teste-env2:
     runs-on: ubuntu-latest
