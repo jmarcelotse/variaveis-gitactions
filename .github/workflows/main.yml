@@ -8,12 +8,39 @@ on:
   pull_request:
     branches:
       - main
+env:
+  ENV_WORKFLOW: "Valor WORKFLOW"
 
 jobs:
-  env:
+  teste-env:
     runs-on: ubuntu-latest
+    env:
+      ENV_JOB: "Valor JOB teste-env"
 
     steps:
-      - name: Exexução 
+      - name: Exexução
+        env:
+          ENV_ACTION: "Valor ACTION - Execução"
         run: |
-          echo "Valor XPTO"
+          echo "$ENV_WORKFLOW"
+          echo "$ENV_JOB"
+          echo "$EENV_ACTION"
+
+      - name: Exexução 2
+        env:
+          ENV_ACTION: "Valor ACTION - SegundaExecução"
+          run: |
+            echo "$ENV_WORKFLOW"
+            echo "$ENV_JOB"
+            echo "$EENV_ACTION"
+
+  teste-env2:
+    runs-on: ubuntu-latest
+    env:
+      ENV_JOB: "Valor JOB Segundo teste-env"
+
+    steps:
+      - name: Exexução
+        run: |
+          echo "$ENV_WORKFLOW"
+          echo "$ENV_JOB"
