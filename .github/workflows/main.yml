@@ -36,6 +36,7 @@ jobs:
 
   teste-env2:
     runs-on: ubuntu-latest
+    needs: [teste-env]
     env:
       ENV_JOB: "Valor JOB Segundo teste-env"
 
